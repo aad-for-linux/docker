@@ -1,5 +1,3 @@
-FROM amazonlinux:2
-
 RUN yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
     && yum update -y && yum group install -y 'Development Tools' \
     && yum install -y \
