@@ -1,0 +1,71 @@
+version: "3"
+services:
+  pam-aad-alpine:
+    container_name: pam-aad-alpine
+    hostname: pam-aad-alpine
+    build: pam_aad/alpine
+    image: aad-for-linux/pam_aad:alpine
+  pam-aad-debian:
+    container_name: pam-aad-debian
+    hostname: pam-aad-debian
+    build: pam_aad/debian
+    image: aad-for-linux/pam_aad:debian
+  pam-aad-rocky:
+    container_name: pam-aad-rocky
+    hostname: pam-aad-rocky
+    build: pam_aad/rocky
+    image: aad-for-linux/pam_aad:rocky
+  pam-aad-ubuntu:
+    container_name: pam-aad-ubuntu
+    hostname: pam-aad-ubuntu
+    build: pam_aad/ubuntu
+    image: aad-for-linux/pam_aad:ubuntu
+  openvpn-auth-aad-alpine:
+    container_name: openvpn-auth-aad-alpine
+    hostname: openvpn-auth-aad-alpine
+    build: openvpn_auth_aad/alpine
+    image: aad-for-linux/openvpn-auth-aad:alpine
+    depends_on:
+      - pam-aad-rocky
+  openvpn-auth-aad-debian:
+    container_name: openvpn-auth-aad-debian
+    hostname: openvpn-auth-aad-debian
+    build: openvpn_auth_aad/debian
+    image: aad-for-linux/openvpn-auth-aad:debian
+    depends_on:
+      - pam-aad-debian
+  openvpn-auth-aad-rocky:
+    container_name: openvpn-auth-aad-rocky
+    hostname: openvpn-auth-aad-rocky
+    build: openvpn_auth_aad/rocky
+    image: aad-for-linux/openvpn-auth-aad:rocky
+    depends_on:
+      - pam-aad-rocky
+  openvpn-auth-aad-ubuntu:
+    container_name: openvpn-auth-aad-ubuntu
+    hostname: openvpn-auth-aad-ubuntu
+    build: openvpn_auth_aad/ubuntu
+    image: aad-for-linux/openvpn-auth-aad:ubuntu
+    depends_on:
+      - pam-aad-ubuntu
+  libnss-aad-alpine:
+    container_name: libnss-aad-alpine
+    hostname: libnss-aad-alpine
+    build: libnss_aad/alpine
+    image: aad-for-linux/libnss-aad:alpine
+  libnss-aad-debian:
+    container_name: libnss-aad-debian
+    hostname: libnss-aad-debian
+    build: libnss_aad/debian
+    image: aad-for-linux/libnss-aad:debian
+  libnss-aad-rocky:
+    container_name: libnss-aad-rocky
+    hostname: libnss-aad-rocky
+    build: libnss_aad/rocky
+    image: aad-for-linux/libnss-aad:rocky
+  libnss-aad-ubuntu:
+    container_name: libnss-aad-ubuntu
+    hostname: libnss-aad-ubuntu
+    build: libnss_aad/ubuntu
+    image: aad-for-linux/libnss-aad:ubuntu
+
