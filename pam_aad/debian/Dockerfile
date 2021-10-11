@@ -1,8 +1,8 @@
-FROM debian:9.7
+FROM pam_aad/debian/Dockerfile
 ARG VERSION
 ARG DEBVER
 
-RUN echo "deb http://http.us.debian.org/debian sid main" \
+RUN echo "deb http://http.us.debian.org/debian bullseye main" \
         >> /etc/apt/sources.list && \
     apt update && apt install -y \
         automake \
