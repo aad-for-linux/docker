@@ -1,4 +1,4 @@
-FROM aad-for-linux/pam_aad:ubuntu
+FROM openvpn_auth_aad/ubuntu/Dockerfile
 ARG VERSION
 ARG DEBVER
 
