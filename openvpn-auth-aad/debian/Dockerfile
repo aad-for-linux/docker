@@ -1,4 +1,4 @@
-FROM openvpn_auth_aad/debian/Dockerfile
+FROM aad-for-linux/pam_aad:debian
 ARG VERSION
 ARG DEBVER
 

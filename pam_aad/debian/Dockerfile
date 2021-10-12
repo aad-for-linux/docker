@@ -1,4 +1,4 @@
-FROM pam_aad/debian/Dockerfile
+FROM debian:11.0
 ARG VERSION
 ARG DEBVER
 
