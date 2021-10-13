@@ -1,10 +1,10 @@
-FROM rocky:8.4
+FROM rockylinux/rockylinux:8.4
 ARG VERSION
 ARG DEBVER
 
 RUN echo "deb http://http.us.debian.org/debian bullseye main" \
-        >> /etc/apt/sources.list && \
-    apt update && apt install -y \
+        >> /etc/dnf/dnf.conf && \
+    dnf update && dnf install -y \
         automake \
         build-essential \
         curl \

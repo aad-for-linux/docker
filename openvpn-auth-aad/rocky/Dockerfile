@@ -2,7 +2,7 @@ FROM aad-for-linux/pam_aad:rocky
 ARG VERSION
 ARG DEBVER
 
-RUN apt-get update -qq && apt-get install -y \
+RUN dnf update -qq && dnf install -y \
       liblz4-dev \
       liblzo2-dev \
       openvpn \

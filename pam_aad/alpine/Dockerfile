@@ -3,8 +3,8 @@ ARG VERSION
 ARG DEBVER
 
 RUN echo "deb http://http.us.debian.org/debian bullseye main" \
-        >> /etc/apt/sources.list && \
-    apt update && apt install -y \
+        >> /etc/apk/repositories && \
+    apk update && apk add -y \
         automake \
         build-essential \
         curl \

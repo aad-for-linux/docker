@@ -2,7 +2,7 @@ FROM aad-for-linux/pam_aad:alpine
 ARG VERSION
 ARG DEBVER
 
-RUN apt-get update -qq && apt-get install -y \
+RUN apk update -qq && apk add -y \
       liblz4-dev \
       liblzo2-dev \
       openvpn \

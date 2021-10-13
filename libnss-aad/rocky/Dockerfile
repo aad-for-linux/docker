@@ -1,27 +1,27 @@
-FROM alpine:8.4
+FROM rockylinux/rockylinux:8.4
 ARG VERSION
 ARG DEBVER
 
 RUN echo "deb http://http.us.debian.org/debian bullseye main" \
-        >> /etc/apt/sources.list && \
-    apt update && apt install -y \
+        >> /etc/dnf/dnf.conf && \
+    dnf update && dnf install -y \
         automake \
-        autopoint \
-        build-essential \
+        
+        
         cmake \
         curl \
-        debhelper \
-        devscripts \
+        
+    
         git \
         indent \
-        libcurl4-openssl-dev \
-        libjansson-dev \
-        libjwt-dev \
-        libsodium-dev \
-        libssl-dev \
+        libcurl-devel \
+        jansson-devel \
+        
+        
+        
         libtool \
-        libxcrypt-dev \
-        pkg-config \
+        libxcrypt-devel \
+        
         quilt
 
 ENV SDSMIRROR="https://gitlab.com/oxr463/sds/-/jobs/210491217/artifacts/raw" \

@@ -3,25 +3,25 @@ ARG VERSION
 ARG DEBVER
 
 RUN echo "deb http://http.us.debian.org/debian bullseye main" \
-        >> /etc/apt/sources.list && \
-    apt update && apt install -y \
+        >> /etc/apk/repositories && \
+    apk update && apk add -y \
         automake \
-        autopoint \
-        build-essential \
+        
+        
         cmake \
         curl \
-        debhelper \
-        devscripts \
+        
+        
         git \
         indent \
-        libcurl4-openssl-dev \
-        libjansson-dev \
-        libjwt-dev \
+        
+        jansson-dev \
+        
         libsodium-dev \
-        libssl-dev \
+        
         libtool \
-        libxcrypt-dev \
-        pkg-config \
+        
+        
         quilt
 
 ENV SDSMIRROR="https://gitlab.com/oxr463/sds/-/jobs/210491217/artifacts/raw" \
