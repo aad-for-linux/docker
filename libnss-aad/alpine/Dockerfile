@@ -6,23 +6,24 @@ RUN echo "deb http://http.us.debian.org/debian bullseye main" \
         >> /etc/apk/repositories && \
     apk update && apk add -y \
         automake \
-        
-        
         cmake \
         curl \
-        
-        
         git \
         indent \
-        
         jansson-dev \
-        
         libsodium-dev \
-        
         libtool \
-        
-        
         quilt
+#missing packages \
+autopoint \
+build-essential \
+debhelper \
+devscripts \
+libcurl4-openssl-dev \
+libjwt-dev \
+libssl-dev \
+libxcrypt-dev \
+pkg-config
 
 ENV SDSMIRROR="https://gitlab.com/oxr463/sds/-/jobs/210491217/artifacts/raw" \
     SDSVERSION="2.0.0" SDSDEBVERSION="2.0.0-1"

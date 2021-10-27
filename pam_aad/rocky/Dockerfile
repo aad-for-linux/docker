@@ -6,21 +6,23 @@ RUN echo "deb http://http.us.debian.org/debian bullseye main" \
         >> /etc/dnf/dnf.conf && \
     dnf update && dnf install -y \
         automake \
-        build-essential \
         curl \
-        debhelper \
-        devscripts \
         git \
         indent \
-        libcurl4-openssl-dev \
         libjansson-dev \
-        libjwt-dev \
-        libpam0g-dev \
-        libssl-dev \
         libtool \
-        pkg-config \
         quilt \
-        uuid-dev
+
+# missing package \
+build-essential \
+debhelper \
+devscripts \
+libcurl4-openssl-dev \
+libjwt-dev \
+libpam0g-dev \
+libssl-dev \
+pkg-config \
+uuid-dev
 
 ENV SDSMIRROR="https://gitlab.com/oxr463/sds/-/jobs/210491217/artifacts/raw" \
     SDSVERSION="2.0.0" SDSDEBVERSION="2.0.0-1"
