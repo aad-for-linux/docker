@@ -1,6 +1,4 @@
 FROM aad-for-linux/pam_aad:alpine
-ARG VERSION
-ARG DEBVER
 
 RUN apk update -qq && apk add -y \
       liblz4-dev \
@@ -14,5 +12,4 @@ RUN useradd -m dev -s /bin/bash && \
     chown -R dev:dev /usr/src/openvpn-auth-aad
 
 RUN tar cvzf "../openvpn-auth-aad_${VERSION}.orig.tar.gz" --exclude='.git*' . && \
-    debuild -us -uc -d -i'(.*)' && \
-    dpkg -i "../openvpn-auth-aad_${VERSION}-${DEBVER}_amd64.deb"
+    make -us -uc -d -i'(.*)' && \

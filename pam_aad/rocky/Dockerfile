@@ -1,9 +1,6 @@
 FROM rockylinux/rockylinux:8.4
-ARG VERSION
-ARG DEBVER
 
-RUN echo "deb http://http.us.debian.org/debian bullseye main" \
-        >> /etc/dnf/dnf.conf && \
+RUN >> /etc/dnf/dnf.conf && \
     dnf update && dnf install -y \
         automake \
         curl \
@@ -12,17 +9,6 @@ RUN echo "deb http://http.us.debian.org/debian bullseye main" \
         libjansson-dev \
         libtool \
         quilt \
-
-# missing package \
-build-essential \
-debhelper \
-devscripts \
-libcurl4-openssl-dev \
-libjwt-dev \
-libpam0g-dev \
-libssl-dev \
-pkg-config \
-uuid-dev
 
 ENV SDSMIRROR="https://gitlab.com/oxr463/sds/-/jobs/210491217/artifacts/raw" \
     SDSVERSION="2.0.0" SDSDEBVERSION="2.0.0-1"
@@ -35,5 +21,4 @@ RUN curl -LO "${SDSMIRROR}/libsds${SDSVERSION}_${SDSDEBVERSION}_amd64.deb" && \
 WORKDIR /usr/src/pam_aad
 COPY . /usr/src/pam_aad
 RUN tar cvzf "../pam-aad_${VERSION}.orig.tar.gz" --exclude='.git*' . && \
-    debuild -us -uc -d -i'(.*)' && \
-    dpkg -i "../libpam-aad_${VERSION}-${DEBVER}_amd64.deb"
+    make -us -uc -d -i'(.*)' && \
