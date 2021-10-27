@@ -20,5 +20,9 @@ RUN curl -LO "${SDSMIRROR}/libsds${SDSVERSION}_${SDSDEBVERSION}_amd64.deb" && \
 
 WORKDIR /usr/src/pam_aad
 COPY . /usr/src/pam_aad
-RUN tar cvzf "../pam-aad_${VERSION}.orig.tar.gz" --exclude='.git*' . && \
-    make -us -uc -d -i'(.*)' && \
+
+ENV PAMROC="/lib64/security" \
+    NSS_PATH="$"{NSS_PATH}:/usr/local/lib:/usr/local/lib64"    
+RUN ./bootstrap.sh && \
+    ./configure --with-pam-dir="${PAMROC}" && \
+    make && make install

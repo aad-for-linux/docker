@@ -24,5 +24,6 @@ RUN curl -LO "${SDSMIRROR}/libsds${SDSVERSION}_${SDSDEBVERSION}_amd64.deb" && \
 
 WORKDIR /usr/src/libnss_aad
 COPY . /usr/src/libnss_aad
-RUN tar cvzf "../libnss-aad_${VERSION}.orig.tar.gz" --exclude='.git*' . && \
-    make -us -uc -i'.git' && \
+
+RUN make depends && \
+    LIB_DIR=/lib64 make -e install
