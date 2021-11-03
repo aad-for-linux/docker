@@ -1,7 +1,7 @@
 FROM alpine:3.14
 
 RUN >> /etc/apk/repositories && \
-    apk update && apk add -y \
+    apk update && apk add \
         automake \
         cmake \
         curl \
