@@ -5,11 +5,7 @@ RUN >> /etc/apk/repositories && \
         automake \
         curl \
         git \
-        indent \
-        libjansson-dev \
-        libpam0g-dev \
-        quilt \
-        libsds
+        indent
 
 WORKDIR /usr/src/pam_aad
 COPY . /usr/src/pam_aad
