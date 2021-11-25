@@ -18,7 +18,11 @@ services:
   pam-aad-ubuntu:
     container_name: pam-aad-ubuntu
     hostname: pam-aad-ubuntu
-    build: pam_aad/ubuntu
+    build:
+      context: pam_aad/ubuntu
+      args:
+        VERSION: 0.0.4
+        DEBVER: 1
     image: aad-for-linux/pam_aad:ubuntu
   openvpn-auth-aad-alpine:
     container_name: openvpn-auth-aad-alpine
