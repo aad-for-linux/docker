@@ -1,0 +1,39 @@
+version: "3"
+services:
+  pam-aad-alpine:
+    volumes:
+      - ~/src/pam_aad/:/usr/src/pam_aad
+  pam-aad-debian:
+    volumes:
+      - ~/src/pam_aad/:/usr/src/pam_aad
+  pam-aad-rocky:
+    volumes:
+      - ~/src/pam_aad/:/usr/src/pam_aad
+  pam-aad-ubuntu:
+    volumes:
+      - ~/src/pam_aad/:/usr/src/pam_aad
+  openvpn-auth-aad-alpine:
+    volumes:
+      - ~/src/openvpn_auth_aad/:/usr/src/openvpn_auth_aad
+  openvpn-auth-aad-debian:
+    volumes:
+      - ~/src/openvpn_auth_aad/:/usr/src/openvpn_auth_aad
+  openvpn-auth-aad-rocky:
+    volumes:
+      - ~/src/openvpn_auth_aad/:/usr/src/openvpn_auth_aad
+  openvpn-auth-aad-ubuntu:
+    volumes:
+      - ~/src/openvpn_auth_aad/:/usr/src/openvpn_auth_aad
+  libnss-aad-alpine:
+    volumes:
+      - ~/src/libnss_aad/:/usr/src/libnss_aad
+  libnss-aad-debian:
+    volumes:
+      - ~/src/libnss_aad/:/usr/src/libnss_aad
+  libnss-aad-rocky:
+    volumes:
+      - ~/src/libnss_aad/:/usr/src/libnss_aad
+  libnss-aad-ubuntu:
+    volumes:
+      - ~/src/libnss_aad/:/usr/src/libnss_aad
+

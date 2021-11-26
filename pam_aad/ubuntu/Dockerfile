@@ -25,10 +25,3 @@ RUN apt update && apt install -y \
         quilt \
         uuid-dev
 
-RUN git clone https://github.com/aad-for-linux/pam_aad.git /usr/src/pam_aad
-
-WORKDIR /usr/src/pam_aad
-RUN tar cvzf "../pam-aad_${VERSION}.orig.tar.gz" --exclude='.git*' . && \
-    debuild -us -uc -d -i'(.*)' && \
-    dpkg -i "../libpam-aad_${VERSION}-${DEBVER}_amd64.deb"
-

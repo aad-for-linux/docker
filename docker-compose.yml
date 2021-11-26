@@ -48,7 +48,11 @@ services:
   openvpn-auth-aad-ubuntu:
     container_name: openvpn-auth-aad-ubuntu
     hostname: openvpn-auth-aad-ubuntu
-    build: openvpn_auth_aad/ubuntu
+    build:
+      context: openvpn_auth_aad/ubuntu
+      args:
+        VERSION: 0.0.2
+        DEBVER: 1
     image: aad-for-linux/openvpn-auth-aad:ubuntu
     depends_on:
       - pam-aad-ubuntu
@@ -70,6 +74,10 @@ services:
   libnss-aad-ubuntu:
     container_name: libnss-aad-ubuntu
     hostname: libnss-aad-ubuntu
-    build: libnss_aad/ubuntu
+    build:
+      context: libnss_aad/ubuntu
+      args:
+        VERSION: 0.0.3
+        DEBVER: 1
     image: aad-for-linux/libnss-aad:ubuntu
 
