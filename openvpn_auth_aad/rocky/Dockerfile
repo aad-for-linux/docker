@@ -1,13 +1,7 @@
 FROM aad-for-linux/pam_aad:rocky
 
-RUN dnf update -qq && dnf install -y \
-      liblz4-dev \
-      liblzo2-dev \
-      openvpn \
+RUN dnf update -y&& dnf install -y \
+      lz4-devel \
+      lzo-devel \
       wget
-
-WORKDIR /usr/src/openvpn_auth_aad
-COPY . /usr/src/openvpn_auth_aad
-
-RUN ./bootstrap.sh && make && make install
 
