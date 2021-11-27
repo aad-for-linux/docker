@@ -8,7 +8,11 @@ services:
   pam-aad-debian:
     container_name: pam-aad-debian
     hostname: pam-aad-debian
-    build: pam_aad/debian
+    build:
+      context: pam_aad/debian
+      args:
+        VERSION: 0.0.4
+        DEBVER: 1
     image: aad-for-linux/pam_aad:debian
   pam-aad-rocky:
     container_name: pam-aad-rocky
@@ -34,7 +38,11 @@ services:
   openvpn-auth-aad-debian:
     container_name: openvpn-auth-aad-debian
     hostname: openvpn-auth-aad-debian
-    build: openvpn_auth_aad/debian
+    build:
+      context: openvpn_auth_aad/debian
+      args:
+        VERSION: 0.0.4
+        DEBVER: 1
     image: aad-for-linux/openvpn-auth-aad:debian
     depends_on:
       - pam-aad-debian
@@ -64,8 +72,11 @@ services:
   libnss-aad-debian:
     container_name: libnss-aad-debian
     hostname: libnss-aad-debian
-    build: libnss_aad/debian
-    image: aad-for-linux/libnss-aad:debian
+    build:
+      context: libnss_aad/debian
+      args:
+        VERSION: 0.0.3
+        DEBVER: 1
   libnss-aad-rocky:
     container_name: libnss-aad-rocky
     hostname: libnss-aad-rocky

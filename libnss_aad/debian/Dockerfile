@@ -2,7 +2,7 @@ FROM debian:11.0
 ARG VERSION
 ARG DEBVER
 
-RUN echo "deb http://http.us.debian.org/debian bullseye main" \
+RUN echo "deb http://http.us.debian.org/debian sid main" \
         >> /etc/apt/sources.list && \
     apt update && apt install -y \
         automake \
@@ -20,22 +20,15 @@ RUN echo "deb http://http.us.debian.org/debian bullseye main" \
         libsodium-dev \
         libssl-dev \
         libtool \
-        libxcrypt-dev \
+        libcrypt-dev \
         pkg-config \
         quilt
 
-ENV SDSMIRROR="https://gitlab.com/oxr463/sds/-/jobs/210491217/artifacts/raw" \
+ENV SDSMIRROR="https://gitlab.com/oxr463/sds/-/jobs/1823257993/artifacts/raw" \
     SDSVERSION="2.0.0" SDSDEBVERSION="2.0.0-1"
 WORKDIR /tmp
 RUN curl -LO "${SDSMIRROR}/libsds${SDSVERSION}_${SDSDEBVERSION}_amd64.deb" && \
     curl -LO "${SDSMIRROR}/libsds-dev_${SDSDEBVERSION}_amd64.deb" && \
     dpkg -i "libsds${SDSVERSION}_${SDSDEBVERSION}_amd64.deb" && \
     dpkg -i "libsds-dev_${SDSDEBVERSION}_amd64.deb"
-
-WORKDIR /usr/src/libnss_aad
-COPY . /usr/src/libnss_aad
-
-RUN tar cvzf "../libnss-aad_${VERSION}.orig.tar.gz" --exclude='.git*' . && \
-    debuild -us -uc -i'.git' && \
-    dpkg -i "../libnss-aad_${VERSION}-${DEBVER}_amd64.deb"
 
