@@ -10,6 +10,14 @@ To build all images at once, run `docker-compose build`.
 
 To build a specific image, specify a service name, e.g., `docker-compose build libnss-aad-ubuntu`.
 
+**Note: this only builds a docker image; it does not compile any of the project code.**
+
+## Running
+
+To run a specific image, specify a service name, e.g., `docker-compose run pam-aad-ubuntu`.
+
+Now you can begin developing the code for each project from within the docker container.
+
 ## License
 
 SPDX-License-Identifier: [MIT](COPYING)
