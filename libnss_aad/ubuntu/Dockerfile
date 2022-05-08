@@ -23,6 +23,7 @@ RUN apt update && apt install -y \
         libsodium-dev \
         libssl-dev \
         libtool \
+        libtool-bin \
         libcrypt-dev \
         pkg-config \
         quilt
