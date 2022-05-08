@@ -21,6 +21,7 @@ RUN apt update && apt install -y \
         libsds-dev \
         libssl-dev \
         libtool \
+        libtool-bin \
         pkg-config \
         quilt \
         uuid-dev
