@@ -15,5 +15,6 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/reposit
       linux-pam-dev \
       make \
       musl-dev \
-      quilt
+      quilt \
+      util-linux-dev
 
