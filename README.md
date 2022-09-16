@@ -2,7 +2,7 @@
 
 
 [![MIT](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](https://spdx.org/licenses/MIT.html)
-[![GitHub Actions](https://img.shields.io/github/workflow/status/aad-for-linux/docker/main?style=flat-square)](https://github.com/aad-for-linux/docker/actions)
+[![GitHub Actions](https://img.shields.io/github/workflow/status/aad-for-linux/docker/publish?style=flat-square)](https://github.com/aad-for-linux/docker/actions)
 
 ## Building
 
