@@ -1,4 +1,4 @@
-FROM aad-for-linux/pam_aad:alpine
+FROM ghcr.io/aad-for-linux/pam_aad:alpine
 
 RUN apk update && apk add \
       lz4-dev \

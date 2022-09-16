@@ -1,4 +1,4 @@
-FROM aad-for-linux/pam_aad:debian
+FROM ghcr.io/aad-for-linux/pam_aad:debian
 ARG VERSION
 ARG DEBVER
 
