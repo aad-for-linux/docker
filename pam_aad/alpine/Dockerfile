@@ -1,4 +1,4 @@
-FROM alpine:3.14
+FROM alpine:3.16.2
 
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
     apk update && apk add \
@@ -9,6 +9,7 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/reposit
       git \
       indent \
       jansson-dev \
+      libjwt-dev \
       libsds-dev \
       libtool \
       linux-pam-dev \
