@@ -2,9 +2,13 @@ FROM rockylinux/rockylinux:8.4
 
 RUN dnf update -y && \
     dnf install -y \
+      epel-release && \
+    dnf install -y \
       automake \
-      curl \
+      curl-devel \
       git \
       jansson-devel \
-      libtool
+      libtool \
+      libjwt-devel \
+      make
 
